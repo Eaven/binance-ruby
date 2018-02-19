@@ -5,9 +5,7 @@ module Binance
   module Api
     class Configuration
       class << self
-        attr_accessor :read_info_api_key
-        attr_writer :api_key, :trading_api_key, :withdrawals_api_key
-        attr_writer :secret_key
+        attr_accessor :read_info_api_key, :api_key, :trading_api_key, :withdrawals_api_key, :secret_key
 
         def api_key(type: nil)
           raise Error.new(message: "invalid security_type type: #{type}.") unless type.nil? || api_key_types.include?(type)
